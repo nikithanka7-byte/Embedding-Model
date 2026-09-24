@@ -1,0 +1,3 @@
+Python 
+sentence-transformers
+scikit-learn
