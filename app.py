@@ -1,12 +1,8 @@
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
-
-# Load the embedding model
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
-
-# Sample sentences
 sentences = [
     "I love learning Python.",
     "Python programming is interesting to me.",
@@ -18,28 +14,20 @@ sentences = [
     "The temperature is very high today."
 ]
 
-
-# Convert sentences into embeddings
 embeddings = model.encode(sentences)
 
 
 print("Total number of sentences:", len(sentences))
 print("Embedding dimension:", len(embeddings[0]))
 
-
-# Display embeddings
 print("\n--- Embeddings ---")
 
 for i, sentence in enumerate(sentences):
     print("\nSentence:", sentence)
     print("Embedding:", embeddings[i])
 
-
-# Calculate cosine similarity
 similarity = cosine_similarity(embeddings)
 
-
-# Display similar sentences
 print("\n--- Semantic Similarity ---")
 
 for i in range(len(sentences)):
